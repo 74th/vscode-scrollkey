@@ -1,10 +1,11 @@
 {
-    "name": "mykeyscroll",
-    "displayName": "mykeyscroll",
+    "name": "scrollkey",
+    "displayName": "scrollkey",
     "description": "key shortcuts for scrolling the lines of preference",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "publisher": "74th",
-    "repository": "https://github.com/74th/vscode-mykeyscroll",
+    "icon": "scrollkey.svg",
+    "repository": "https://github.com/74th/vscode-scrollkey",
     "license": "MIT",
     "engines": {
         "vscode": "^1.0.0"
@@ -13,18 +14,18 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:mykeyscroll.up1",
-        "onCommand:mykeyscroll.up2",
-        "onCommand:mykeyscroll.up3",
-        "onCommand:mykeyscroll.down1",
-        "onCommand:mykeyscroll.down2",
-        "onCommand:mykeyscroll.down3"
+        "onCommand:scrollkey.up1",
+        "onCommand:scrollkey.up2",
+        "onCommand:scrollkey.up3",
+        "onCommand:scrollkey.down1",
+        "onCommand:scrollkey.down2",
+        "onCommand:scrollkey.down3"
     ],
     "main": "./out/src/extension",
     "contributes": {
         "configuration": {
             "type": "object",
-            "title": "mykeyscroll configuration",
+            "title": "scrollkey configuration",
             "properties": {
                 "mykeyscroll.line1": {
                     "type": "number",
@@ -45,27 +46,27 @@
         },
         "commands": [
             {
-                "command": "mykeyscroll.up1",
+                "command": "scrollkey.up1",
                 "title": "scroll up(setting1)"
             },
             {
-                "command": "mykeyscroll.up2",
+                "command": "scrollkey.up2",
                 "title": "scroll up(setting2)"
             },
             {
-                "command": "mykeyscroll.up3",
+                "command": "scrollkey.up3",
                 "title": "scroll up(setting3)"
             },
             {
-                "command": "mykeyscroll.down1",
+                "command": "scrollkey.down1",
                 "title": "scroll down(setting1)"
             },
             {
-                "command": "mykeyscroll.down2",
+                "command": "scrollkey.down2",
                 "title": "scroll down(setting2)"
             },
             {
-                "command": "mykeyscroll.down3",
+                "command": "scrollkey.down3",
                 "title": "scroll down(setting3)"
             }
         ]
