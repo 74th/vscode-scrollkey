@@ -1,6 +1,7 @@
-# mykeyscroll for Visual Studio Code
+# additional scroll keys for Visual Studio Code
 
-https://marketplace.visualstudio.com/items?itemName=74th.vimStyle
+* https://marketplace.visualstudio.com/items?itemName=74th.scrollkey
+* https://github.com/74th/vscode-scrollkey
 
 Visual Studio Code don't have half page scrolling. This plugin supports scrolling with lines of preference.
 
@@ -12,9 +13,9 @@ Visual Studio Code don't have half page scrolling. This plugin supports scrollin
 
 ```json
 {
-    "mykeyscroll.line1": 1,
-    "mykeyscroll.line2": 30,
-    "mykeyscroll.line3": 60
+    "scrollkey.line1": 1,
+    "scrollkey.line2": 30,
+    "scrollkey.line3": 60
 }
 ```
 
@@ -28,32 +29,32 @@ Please use your favorite keys.
 [
     {
         "key": "ctrl+y",
-        "command": "mykeyscroll.up1",
+        "command": "scrollkey.up1",
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+u",
-        "command": "mykeyscroll.up2",
+        "command": "scrollkey.up2",
         "when": "editorTextFocus"
     },
     {
         "key": "PageUp",
-        "command": "mykeyscroll.up3",
+        "command": "scrollkey.up3",
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+e",
-        "command": "mykeyscroll.down1",
+        "command": "scrollkey.down1",
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+d",
-        "command": "mykeyscroll.down2",
+        "command": "scrollkey.down2",
         "when": "editorTextFocus"
     },
     {
         "key": "PageDown",
-        "command": "mykeyscroll.down3",
+        "command": "scrollkey.down3",
         "when": "editorTextFocus"
     }
 ]
