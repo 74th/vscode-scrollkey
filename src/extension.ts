@@ -1,29 +1,55 @@
 'use strict';
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-
-    // Use the console to output diagnostic information (console.log) and errors (console.error)
-    // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "mykeyscroll" is now active!');
-
-    // The command has been defined in the package.json file
-    // Now provide the implementation of the command with  registerCommand
-    // The commandId parameter must match the command field in package.json
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        // The code you place here will be executed every time your command is executed
-
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Hello World!');
-    });
-
-    context.subscriptions.push(disposable);
+function scroll(line:number, position:string) {
+    let currentPosition = vscode.window.activeTextEditor.selection.active;
+    let moveToLine = currentPosition.line + line;
+    let documentLineCount = vscode.window.activeTextEditor.document.lineCount;
+    if( moveToLine > documentLineCount-1 ){
+        moveToLine = documentLineCount-1;
+    }
+    if (moveToLine < 0) {
+        moveToLine = 0;
+    }
+    let moveToCharactor = vscode.window.activeTextEditor.document.lineAt(moveToLine).firstNonWhitespaceCharacterIndex;
+    let newPosition = new vscode.Position(moveToLine,moveToCharactor)
+        vscode.window.activeTextEditor.selection = new vscode.Selection(newPosition, newPosition);
+        vscode.window.activeTextEditor.revealRange(vscode.window.activeTextEditor.selection, vscode.TextEditorRevealType.InCenter);
 }
 
-// this method is called when your extension is deactivated
+export function activate(context: vscode.ExtensionContext) {
+
+    let line1 = 30;
+    let line2 = 60;
+    let line3 = 90;
+    function loadConfiguration() {
+        let conf = vscode.workspace.getConfiguration("mykeyscroll");
+        line1 = conf.get<number>("line1", 30);
+        line2 = conf.get<number>("line2", 60);
+        line3 = conf.get<number>("line3", 90);
+    }
+    loadConfiguration();
+    vscode.workspace.onDidChangeConfiguration(loadConfiguration);
+
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.up1', () => {
+        scroll(-1*line1,null)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.up2', () => {
+        scroll(-1*line2,null)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.up3', () => {
+        scroll(-1*line3,null)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.down1', () => {
+        scroll(line1,null)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.down2', () => {
+        scroll(line2,null)
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand('mykeyscroll.down3', () => {
+        scroll(line3,null)
+    }));
+}
+
 export function deactivate() {
 }

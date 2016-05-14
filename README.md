@@ -1,13 +1,66 @@
-# README
-## This is the README for your extension "mykeyscroll"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# mykeyscroll for Visual Studio Code
 
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
+https://marketplace.visualstudio.com/items?itemName=74th.vimStyle
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+Visual Studio Code don't have half page scrolling. This plugin supports scrolling with lines of preference.
 
-**Enjoy!**
+## how to use
+
+### 1. add settings 
+
+`⌘,` or key`F1` -> `Open User Settings`
+
+```json
+{
+    "mykeyscroll.line1": 1,
+    "mykeyscroll.line2": 30,
+    "mykeyscroll.line3": 60
+}
+```
+
+### 2. add Keyboard Shortcuts
+
+key`F1` -> `Open Keyboard Shortcuts`
+
+Please use your favorite keys.
+
+```json
+{
+    {
+        "key": "ctrl+y",
+        "command": "mykeyscroll.up1",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "mykeyscroll.up2",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "PageUp",
+        "command": "mykeyscroll.up3",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "mykeyscroll.down1",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "mykeyscroll.down2",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "PageDown",
+        "command": "mykeyscroll.down3",
+        "when": "editorTextFocus"
+    }
+}
+```
+
+### 3. restart VSCode
+
+## License
+
+MIT

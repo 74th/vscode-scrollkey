@@ -2,8 +2,10 @@
     "name": "mykeyscroll",
     "displayName": "mykeyscroll",
     "description": "key shortcuts for scrolling the lines of preference",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "74th",
+    "repository": "https://github.com/74th/vscode-mykeyscroll",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.0.0"
     },
@@ -11,14 +13,62 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:mykeyscroll.up1",
+        "onCommand:mykeyscroll.up2",
+        "onCommand:mykeyscroll.up3",
+        "onCommand:mykeyscroll.down1",
+        "onCommand:mykeyscroll.down2",
+        "onCommand:mykeyscroll.down3"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "configuration": {
+            "type": "object",
+            "title": "mykeyscroll configuration",
+            "properties": {
+                "mykeyscroll.line1": {
+                    "type": "number",
+                    "default": 30,
+                    "description": "scrolling lines(setting1)"
+                },
+                "mykeyscroll.line2": {
+                    "type": "number",
+                    "default": 60,
+                    "description": "scrolling lines(setting2)"
+                },
+                "mykeyscroll.line3": {
+                    "type": "number",
+                    "default": 90,
+                    "description": "scrolling lines(setting3)"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "mykeyscroll.up1",
+                "title": "scroll up(setting1)"
+            },
+            {
+                "command": "mykeyscroll.up2",
+                "title": "scroll up(setting2)"
+            },
+            {
+                "command": "mykeyscroll.up3",
+                "title": "scroll up(setting3)"
+            },
+            {
+                "command": "mykeyscroll.down1",
+                "title": "scroll down(setting1)"
+            },
+            {
+                "command": "mykeyscroll.down2",
+                "title": "scroll down(setting2)"
+            },
+            {
+                "command": "mykeyscroll.down3",
+                "title": "scroll down(setting3)"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
@@ -27,6 +77,7 @@
     },
     "devDependencies": {
         "typescript": "^1.8.5",
-        "vscode": "^0.11.0"
+        "vscode": "^0.11.0",
+        "tslint": "^3.6.0"
     }
 }
