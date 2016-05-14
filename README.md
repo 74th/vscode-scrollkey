@@ -25,7 +25,7 @@ key`F1` -> `Open Keyboard Shortcuts`
 Please use your favorite keys.
 
 ```json
-{
+[
     {
         "key": "ctrl+y",
         "command": "mykeyscroll.up1",
@@ -56,7 +56,7 @@ Please use your favorite keys.
         "command": "mykeyscroll.down3",
         "when": "editorTextFocus"
     }
-}
+]
 ```
 
 ### 3. restart VSCode
