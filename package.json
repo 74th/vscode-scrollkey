@@ -2,7 +2,7 @@
     "name": "scrollkey",
     "displayName": "scrollkey",
     "description": "additional key shortcuts for scrolling the lines of preference",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "74th",
     "icon": "scrollkey.svg",
     "homepage": "https://github.com/74th/vscode-scrollkey",
@@ -19,7 +19,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.0.1"
+        "vscode": "^1.0.0"
     },
     "categories": [
         "Other"
