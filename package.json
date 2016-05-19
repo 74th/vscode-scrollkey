@@ -19,7 +19,7 @@
     },
     "license": "MIT",
     "engines": {
-        "vscode": "^1.0.0"
+        "vscode": "^1.0.1"
     },
     "categories": [
         "Other"
@@ -38,17 +38,17 @@
             "type": "object",
             "title": "scrollkey configuration",
             "properties": {
-                "mykeyscroll.line1": {
+                "scrollkey.line1": {
                     "type": "number",
                     "default": 30,
                     "description": "scrolling lines(setting1)"
                 },
-                "mykeyscroll.line2": {
+                "scrollkey.line2": {
                     "type": "number",
                     "default": 60,
                     "description": "scrolling lines(setting2)"
                 },
-                "mykeyscroll.line3": {
+                "scrollkey.line3": {
                     "type": "number",
                     "default": 90,
                     "description": "scrolling lines(setting3)"
