@@ -1,3 +1,21 @@
+You don't need to use this extension,  it is available in VS Code's standard feature key bindings.
+
+```json
+{
+  // keybindings.json
+  {
+    "key": "ctrl+d",
+    "command": "editorScroll",
+    "args": {
+      "to": "down",
+      "by": "halfPage",
+      "revealCursor": true,
+      "value": 1
+    }
+  }
+}
+```
+
 # additional scroll keys for Visual Studio Code
 
 * https://marketplace.visualstudio.com/items?itemName=74th.scrollkey
@@ -7,7 +25,7 @@ Visual Studio Code don't have half page scrolling. This plugin supports scrollin
 
 ## how to use
 
-### 1. add settings 
+### 1. add settings
 
 `⌘,` or key`F1` -> `Open User Settings`
 
